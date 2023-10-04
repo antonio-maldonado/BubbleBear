@@ -193,7 +193,7 @@ form.addEventListener("submit", function (event) {
 
   message = message.join("");
   infoErrorBox.innerHTML = message;
-
+ event.preventDefault();
   if (message != []) { 
     event.preventDefault();
   } else { 
