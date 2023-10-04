@@ -78,8 +78,7 @@ public class WebSecurityConfig {
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
 		//TODO: Poner el link del deploy en lugar de 127.0.0.1:5500
-		configuration.setAllowedOrigins( List.of("http://127.0.0.1:5500") ); 
-		configuration.setAllowedOrigins( List.of("https://admin-kqcu.onrender.com/") ); 
+		configuration.setAllowedOrigins( List.of("http://127.0.0.1:5500","https://admin-kqcu.onrender.com") ); 
 		configuration.setAllowedMethods( List.of("GET", "POST", "PUT", "DELETE") );
 		configuration.setAllowedHeaders( List.of("Authorization","Content-Type") );
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
