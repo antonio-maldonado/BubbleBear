@@ -197,7 +197,7 @@ form.addEventListener("submit", function (event) {
   if (message != []) { 
     event.preventDefault();
   } else { 
-
+event.preventDefault();
     const nameNewProduct = document.getElementById("nom-producto");
     const sizeNewProduct = document.getElementById("size");
     const stockNewProduct = document.getElementById("stock");
