@@ -1,7 +1,7 @@
 obtenerProductos();
 function obtenerProductos() {
 
-    const apiUrl = 'http://localhost:8080/api/products';
+    const apiUrl = 'https://admin-kqcu.onrender.com/api/products';
 
     // Realizar la solicitud POST con el objeto JSON como cuerpo
     fetch(apiUrl)

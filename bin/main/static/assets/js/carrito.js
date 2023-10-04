@@ -3,7 +3,7 @@ let response;
 
 calcularTotal();
 async function getAllProducts(){
-    const url = "http://localhost:8080/api/products"
+    const url = "https://admin-kqcu.onrender.com/api/products"
     try {
         
         const responseJSON = await fetch(url);
@@ -248,7 +248,7 @@ function getAllOrders(orders){
 }
 
 async function getOrders(){
-    const orderUrl = "http://localhost:8080/api/orders";
+    const orderUrl = "https://admin-kqcu.onrender.com/api/orders";
     try{
         const response = await fetch(orderUrl);
         
@@ -266,7 +266,7 @@ async function getOrders(){
 /* método post Crear Order */
 
 async function postOrders (orders) { 
-    const url = 'http://localhost:8080/api/orders'
+    const url = 'https://admin-kqcu.onrender.com/api/orders'
         try{
         const response = await fetch (url, {
             method: 'POST',
@@ -281,7 +281,7 @@ async function postOrders (orders) {
 };
 
 async function postOrdersHasProducts (ordersHasProducts) { 
-    const url = 'http://localhost:8080/api/ordershasproducts'
+    const url = 'https://admin-kqcu.onrender.com/api/ordershasproducts'
         try{
         const response = await fetch (url, {
             method: 'POST',

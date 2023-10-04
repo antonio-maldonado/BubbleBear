@@ -55,7 +55,7 @@ const password = document.getElementById("password");
 const passwordConfirmation = document.getElementById("password-confirmation")
 const birthday = document.getElementById("date");
 
-fetch("http://localhost:8080/api/user/2") 
+fetch("https://admin-kqcu.onrender.com/api/user/2") 
     .then(response => response.json())
     .then (userData => {
 

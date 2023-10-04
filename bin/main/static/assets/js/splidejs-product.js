@@ -119,7 +119,7 @@ function agregarAlCarrito(e){
 
 
 async function getProductById(id){
-  const url = "http://localhost:8080/api/products/"+id
+  const url = "https://admin-kqcu.onrender.com/api/products/"+id
   try {
       
       const responseJSON = await fetch(url);

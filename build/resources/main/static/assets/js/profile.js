@@ -7,7 +7,7 @@ if(!localStorage.getItem("login")){
 }
 
 async function getAllProducts(){
-    const url = "http://localhost:8080/api/products"
+    const url = "https://admin-kqcu.onrender.com/api/products"
     try {
         
         const responseJSON = await fetch(url);
@@ -26,7 +26,7 @@ async function getAllProducts(){
 
 
 
-const urlOrderHasProduct = "http://localhost:8080/api/ordershasproducts";
+const urlOrderHasProduct = "https://admin-kqcu.onrender.com/api/ordershasproducts";
 async function getOrdersHasProducts( url ){
     try {
         const responseJSON = await fetch( url );
@@ -42,7 +42,7 @@ getOrdersHasProducts(urlOrderHasProduct);
 
 async function getUserById(id){
     try {
-        const url='http://localhost:8080/api/user/'+ id;
+        const url='https://admin-kqcu.onrender.com/api/user/'+ id;
         const responseJSON = await fetch(url);
         const response = await responseJSON.json();
         if(response.ok){
@@ -60,7 +60,7 @@ async function getUserById(id){
 
 // modificar
 async function modifyUser(user){
-    const url = `http://localhost:8080/api/user/${user.id}`;
+    const url = `https://admin-kqcu.onrender.com/api/user/${user.id}`;
     try{ 
         const response = await fetch(url,{
             methot: 'PUT',
@@ -82,7 +82,7 @@ async function modifyUser(user){
 
 //Delete User
 async function deleteUser(userId){
-    const deleteUrl = "http://localhost:8080/api/user/" + userId;
+    const deleteUrl = "https://admin-kqcu.onrender.com/api/user/" + userId;
     try {
         const response = await fetch(deleteUrl, {
             method: "DELETE",
@@ -104,7 +104,7 @@ async function deleteUser(userId){
 
 async function getUserById(id){
     try {
-        const url='http://localhost:8080/api/user/' + id;
+        const url='https://admin-kqcu.onrender.com/api/user/' + id;
         const responseJSON = await fetch(url);
         const response = await responseJSON.json();
         if(response.ok){
@@ -134,7 +134,7 @@ if(userData){
 
 let order;
 async function getOrders(){
-    const orderUrl = "http://localhost:8080/api/orders";
+    const orderUrl = "https://admin-kqcu.onrender.com/api/orders";
     try{
         const response1 = await fetch(orderUrl);
         

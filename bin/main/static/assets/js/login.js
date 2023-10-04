@@ -4,7 +4,7 @@ if(localStorage.getItem("login")){
 }
 
 const postUser = async (userData) => {
-const url = "http://localhost:8080/login";
+const url = "https://admin-kqcu.onrender.com/login";
 
 const response = await fetch(url, {
   method: "POST", // POST, PUT, DELETE, GET
@@ -185,7 +185,7 @@ app.listen(app.get('port'), () => {
 
 
 
-  // fetch("http://localhost:8080/api/user/2", { mode: 'no-cors' } { mode: 'no-cors' })
+  // fetch("https://admin-kqcu.onrender.com/api/user/2", { mode: 'no-cors' } { mode: 'no-cors' })
   // .then((response) => {
   //   if(!response.ok){
   //       throw new Error ("Error al obtener usuario");

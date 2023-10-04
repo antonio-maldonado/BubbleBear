@@ -15,7 +15,7 @@ if(!localStorage.getItem("admin")){
     location.assign("/");
 }
 async function getAllProducts(){
-    const url = "http://localhost:8080/api/products"
+    const url = "https://admin-kqcu.onrender.com/api/products"
     try {
         
         const responseJSON = await fetch(url);
@@ -176,7 +176,7 @@ arrowProductos.forEach( ( aP , i ) => aP.addEventListener("click", ()=>{
 // Eliminar producto
 
 async function deleteProduct(keyProduct) {
-    const deleteUrl = "http://localhost:8080/api/products/" + keyProduct ;
+    const deleteUrl = "https://admin-kqcu.onrender.com/api/products/" + keyProduct ;
     try {
         const response = await fetch(deleteUrl, {
             method: "DELETE",
@@ -194,7 +194,7 @@ async function deleteProduct(keyProduct) {
 
 /* solicitud get order_has_product */
 
-const urlOrderHasProduct = "http://localhost:8080/api/ordershasproducts"
+const urlOrderHasProduct = "https://admin-kqcu.onrender.com/api/ordershasproducts"
 async function getOrdersHasProducts( url ){
     try {
         const responseJSON = await fetch( url );
@@ -214,7 +214,7 @@ getOrdersHasProducts(urlOrderHasProduct); //Sí funcionó ok gracias tony
 // Solicitud Post order_has_product
 
 async function postOrdersHasProducts (ordersHasProducts) { 
-    const url = 'http://localhost:8080/api/ordershasproducts'
+    const url = 'https://admin-kqcu.onrender.com/api/ordershasproducts'
         try{
         const response = await fetch (url, {
             method: 'POST',
@@ -230,7 +230,7 @@ async function postOrdersHasProducts (ordersHasProducts) {
 
 // solicitud get categories by Id
 
-const categoriesUrl = "http://localhost:8080/api/categories"; 
+const categoriesUrl = "https://admin-kqcu.onrender.com/api/categories"; 
 
 async function getCategoryById (categoryId) {
     const url = `${categoriesUrl}/${categoryId}`;
@@ -258,7 +258,7 @@ getCategoryById(1);//Sí funcionó
 //getOrderById
 
 async function getOrderById(orderId){
-    const orderUrl = "http://localhost:8080/api/orders/" + orderId;
+    const orderUrl = "https://admin-kqcu.onrender.com/api/orders/" + orderId;
     try{
         const response = await fetch(orderUrl);
         
@@ -277,7 +277,7 @@ async function getOrderById(orderId){
 //getOrderById(1);
 
 async function getOrders(){
-    const orderUrl = "http://localhost:8080/api/orders";
+    const orderUrl = "https://admin-kqcu.onrender.com/api/orders";
     try{
         const response = await fetch(orderUrl);
         
@@ -301,7 +301,7 @@ getOrders();
 
 // método deleteOrder
 
-const ordersUrl = "http://localhost:8080/api/orders"
+const ordersUrl = "https://admin-kqcu.onrender.com/api/orders"
 
 async function deleteOrderById(orderId) {
     const url = `${ordersUrl}/${orderId}`;

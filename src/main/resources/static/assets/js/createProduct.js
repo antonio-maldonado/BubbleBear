@@ -99,7 +99,7 @@ img.addEventListener("change",  async (e)=> {
 });
 
  // solicitud post 
-const url = "http://localhost:8080/api/products"; 
+const url = "https://admin-kqcu.onrender.com/api/products"; 
 
 async function createProduct (product) {
 

@@ -7,7 +7,7 @@ if(!localStorage.getItem("login")){
 }
 
 async function getOrders(){
-    const orderUrl = "http://localhost:8080/api/orders";
+    const orderUrl = "https://admin-kqcu.onrender.com/api/orders";
     try{
         const response = await fetch(orderUrl);
             
@@ -26,7 +26,7 @@ async function getOrders(){
 }
 
 async function getProduct(id){
-    const url = "http://localhost:8080/api/products/" + id;
+    const url = "https://admin-kqcu.onrender.com/api/products/" + id;
  
         const responseJSON = await fetch(url);
 
@@ -35,7 +35,7 @@ async function getProduct(id){
 }
 
 async function getAllProducts(){
-    const url = "http://localhost:8080/api/products"
+    const url = "https://admin-kqcu.onrender.com/api/products"
     try {
         
         const responseJSON = await fetch(url);
@@ -93,7 +93,7 @@ getAllProducts();
 getOrders();
 //
 
-const urlOrderHasProduct = "http://localhost:8080/api/ordershasproducts"
+const urlOrderHasProduct = "https://admin-kqcu.onrender.com/api/ordershasproducts"
 async function getOrdersHasProducts( url ){
     try {
         const responseJSON = await fetch( url );

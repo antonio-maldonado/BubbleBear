@@ -1,6 +1,6 @@
 
  // solicitud post 
-const url = "http://localhost:8080/api/products"; 
+const url = "https://admin-kqcu.onrender.com/api/products"; 
 
 async function postProduct (product) {
 
@@ -43,7 +43,7 @@ async function postProduct (product) {
 
 
 /* async function getAllProducts(){
-const url = " http://localhost:8080/api/products"
+const url = " https://admin-kqcu.onrender.com/api/products"
     try {
         
         const responseJson = await fetch(url);

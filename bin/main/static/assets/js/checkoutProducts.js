@@ -8,7 +8,7 @@ if(!localStorage.getItem("admin")){
 
 let productoUno;
 async function getProduct(){
-    const url = "http://localhost:8080/api/products/"+storedId;
+    const url = "https://admin-kqcu.onrender.com/api/products/"+storedId;
     try {
         
         const responseJSON = await fetch(url);

@@ -4,7 +4,7 @@ if(localStorage.getItem("login")){
 }
 //solicitud Post
 async function postUser (users) {
-    const url = 'http://localhost:8080/api/user'
+    const url = 'https://admin-kqcu.onrender.com/api/user'
     try{
         const response = await fetch (url, {
             method: 'POST',
@@ -197,7 +197,7 @@ btn.addEventListener("submit", async function (e) {
 /* Solicitud get */
 
 /* 
-const urlUsers = "http://localhost:8080/api/user"
+const urlUsers = "https://admin-kqcu.onrender.com/api/user"
 async function getUsers ( url ){
     try{
         const responseJSON = await fetch( url );
@@ -218,7 +218,7 @@ async function getUsers ( url ){
 
    //solicitud Post
 async function postUser (users) {
-    const url = 'http://localhost:8080/api/user'
+    const url = 'https://admin-kqcu.onrender.com/api/user'
     try{
         const response = await fetch (url, {
             method: 'POST',
@@ -232,7 +232,7 @@ async function postUser (users) {
     }
 };
 
-const urlSignup = "http://localhost:8080/api/user/signup";
+const urlSignup = "https://admin-kqcu.onrender.com/api/user/signup";
 const userData = {
     Name: 'Allan Espitia',
     email: 'espitiaallan@gmail.com',
