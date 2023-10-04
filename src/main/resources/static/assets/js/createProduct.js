@@ -15,11 +15,12 @@ class NewProduct {
     this.photo = photoFile;
     this.description = description;
     this.flavor=flavor;
-    this.category = {
+    this.category = 1;
+    /*this.category = {
       id: 1,
       sale: true,
       outstanding: true,
-    };
+    };*/
   }
   
 
