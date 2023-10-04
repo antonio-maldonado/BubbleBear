@@ -54,8 +54,11 @@ public class Product {
 	@Column(name = "flavor", nullable = false, length=45)
 	private String flavor;
 	
-	@ManyToOne
-	@JoinColumn(name="fk_categories_id")
-	@JsonIgnoreProperties("products")
-	private Categories category;
+	@Column(name = "fk_categories_id", nullable = false)
+	private int category;
+//	@ManyToOne
+//	@JoinColumn(name="fk_categories_id")
+//	@JsonIgnoreProperties("products")
+//	private Categories category;
+	
 }
