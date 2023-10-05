@@ -27,7 +27,7 @@ async function getProduct(){
         photo.setAttribute("src", productoUno.photo)
         description.innerHTML = productoUno.description;
         flavor.setAttribute("value",productoUno.flavor);
-        category.setAttribute("value",productoUno.category.id);
+        category.setAttribute("value",productoUno.category);
         hide.setAttribute("value", productoUno.hide);
 
     } catch (error) {
@@ -79,7 +79,7 @@ class NewProduct {
         this.description = description;
         this.photo = photoFile;
         this.flavor = flavor;
-        this.category = 1;
+        this.category = category;
         /*this.category = {
             id: 1,
             sale: true,
