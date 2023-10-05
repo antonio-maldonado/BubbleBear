@@ -79,11 +79,12 @@ class NewProduct {
         this.description = description;
         this.photo = photoFile;
         this.flavor = flavor;
-        this.category = {
+        this.category = 1;
+        /*this.category = {
             id: 1,
             sale: true,
             outstanding: true,
-        };
+        };*/
     }
 
     /* Calculating ID for each product */

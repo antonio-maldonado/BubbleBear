@@ -194,11 +194,11 @@ form.addEventListener("submit", function (event) {
 
   message = message.join("");
   infoErrorBox.innerHTML = message;
- event.preventDefault();
+
   if (message != []) { 
     event.preventDefault();
   } else { 
-event.preventDefault();
+
     const nameNewProduct = document.getElementById("nom-producto");
     const sizeNewProduct = document.getElementById("size");
     const stockNewProduct = document.getElementById("stock");
