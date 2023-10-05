@@ -23,6 +23,7 @@ async function getProduct(){
         const description = document.getElementById("descripcion");
         const hide = document.getElementById("disguise");
         const photo = document.getElementById("photo");
+        const category = document.getElementById("category");
 
         name1.setAttribute("value", productoUno.name);
         price.setAttribute("value", productoUno.price);
@@ -30,7 +31,7 @@ async function getProduct(){
         stock.setAttribute("value", productoUno.stock);
         photo.setAttribute("src", productoUno.photo)
         description.innerHTML = productoUno.description;
-
+		category.setAttribute("value",productoUno.category);
         hide.setAttribute("value", productoUno.hide);
 
     } catch (error) {

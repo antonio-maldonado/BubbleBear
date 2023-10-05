@@ -15,7 +15,7 @@ class NewProduct {
     this.photo = photoFile;
     this.description = description;
     this.flavor=flavor;
-    this.category = 1;
+    this.category = category;
     /*this.category = {
       id: 1,
       sale: true,
@@ -216,6 +216,7 @@ form.addEventListener("submit", function (event) {
       dataUrl,flavor,category)
 
     createProduct(productInf);
+   	
   }
 
 });
