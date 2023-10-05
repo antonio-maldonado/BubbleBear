@@ -27,8 +27,8 @@ async function getProduct(){
         photo.setAttribute("src", productoUno.photo)
         description.innerHTML = productoUno.description;
         flavor.setAttribute("value",productoUno.flavor);
-        category.setAttribute("value",int(productoUno.category));
         hide.setAttribute("value", productoUno.hide);
+        category.setAttribute("value",int(productoUno.category));
 
     } catch (error) {
         console.log(error);
