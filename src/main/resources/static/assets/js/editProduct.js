@@ -28,7 +28,7 @@ async function getProduct(){
         description.innerHTML = productoUno.description;
         flavor.setAttribute("value",productoUno.flavor);
         hide.setAttribute("value", productoUno.hide);
-        category.setAttribute("value",int(productoUno.category));
+        category.setAttribute("value",(productoUno.category));
 
     } catch (error) {
         console.log(error);
