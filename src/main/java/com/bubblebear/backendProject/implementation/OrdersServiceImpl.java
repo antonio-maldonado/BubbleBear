@@ -48,9 +48,9 @@ public class OrdersServiceImpl implements OrderService{
 			throw new IllegalStateException("Order not found");
 		}
 		existingOrder.setOrder_id( order.getOrder_id() );
-		existingOrder.setTotal_amount( order.getTotal_amount() );
-		existingOrder.setPurchase_date( order.getPurchase_date() );
-		existingOrder.setFk_user_id( order.getFk_user_id() );
+		//existingOrder.setTotal_amount( order.getTotal_amount() );
+		//existingOrder.setPurchase_date( order.getPurchase_date() );
+		//existingOrder.setFk_user_id( order.getFk_user_id() );
 		return orderRepository.save( existingOrder );	
 	}
 

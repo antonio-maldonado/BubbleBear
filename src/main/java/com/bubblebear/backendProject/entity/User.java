@@ -1,17 +1,19 @@
 package com.bubblebear.backendProject.entity;
 
-
-
 import java.sql.Date;
-
+import java.util.List;
 
 import com.bubblebear.backendProject.entity.limits.UserFieldLimits;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -53,24 +55,18 @@ public class User implements UserFieldLimits {
 	@Column(name = "role", columnDefinition = "INT default 0")
 	private int role;
 	
+	@OneToMany(mappedBy="user",cascade = CascadeType.DETACH,fetch = FetchType.EAGER)
+	@JsonIgnoreProperties("user")
+	private List<Orders> orders;
+	
 
-	public User(String fullname, String email, String password, 
-			Date birthday, String phone_number, int role) {
-		this.fullname = fullname;
-		this.email = email;
-		this.password = password;
-		this.birthday = birthday;
-		this.phone_number = phone_number;
-		this.role = role;
-	}
 
 	/*
 	@OneToMany(mappedBy = "user")  
 	@JsonIgnoreProperties("user")
 	private List<Orders> orders = new ArrayList<>(); */
 
-	
-	
+
 	
 	
 }

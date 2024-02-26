@@ -28,8 +28,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		AuthCredentials authCredentials = new AuthCredentials();
 		
 		try {
-			// Asumimos que el body de la petición vendrá en el formato JSON: { "email": "pato@gmail.com", "password": "123"
-			// Realizamos un mapeo a nuestra clase AuthCredentials
 			authCredentials = new ObjectMapper().readValue( request.getReader(), AuthCredentials.class );
 			log.info( authCredentials.toString());
 		} catch (IOException e) {
@@ -45,7 +43,8 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			e.printStackTrace();
 		}
 		
-		UsernamePasswordAuthenticationToken usernamePAT = new UsernamePasswordAuthenticationToken(
+		UsernamePasswordAuthenticationToken usernamePAT = new 
+				UsernamePasswordAuthenticationToken(
 				authCredentials.getEmail(),
 				authCredentials.getPassword()
 				);
@@ -60,6 +59,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		
 		UserDetailsImpl userDetails = (UserDetailsImpl) authResult.getPrincipal();
 		String token = TokenUtils.createToken( 
+				userDetails.getUserId(),
 				userDetails.FullName(), 
 				userDetails.getUsername(),
 				userDetails.getAuthorities()
@@ -71,7 +71,9 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
 		// Configurar la respuesta HTTP
 		response.setContentType("application/json");
-		response.setCharacterEncoding("UTF-8");		
+		response.setCharacterEncoding("UTF-8");	
+		response.addHeader("Access-Control-Allow-Origin", "*");
+
 		//response.addHeader("Authorization", "Bearer " + token);
 		// Establecer el cuerpo de la respuesta como el objeto JSON
 		response.getWriter().write(jsonResponse.toString());	

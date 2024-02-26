@@ -28,9 +28,6 @@ public class UserDetailsImpl implements UserDetails {
 		log.info("Agregando roles");
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		
-		//authorities.add(  new SimpleGrantedAuthority( "ROLE_"+this.user.getRole() )); // TODO leer ROLE de User		
-		//user.getRoles().forEach( role-> authorities.add(  new SimpleGrantedAuthority( "ROLE_"+ role.getRoleName() )) );
-		
 		authorities.add(  new SimpleGrantedAuthority( "ROLE_CUSTOMER" ));
 		
 		if( this.user.getRole() == 1 ) {
@@ -50,6 +47,10 @@ public class UserDetailsImpl implements UserDetails {
 		return this.user.getEmail();
 	}
 
+	public String getUserId() {
+		return Integer.toString(this.user.getId());
+	}
+	
 	@Override
 	public boolean isAccountNonExpired() {		
 		return true;

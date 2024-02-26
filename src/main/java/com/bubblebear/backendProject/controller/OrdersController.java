@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,14 +25,13 @@ import lombok.extern.log4j.Log4j2;
 @RequestMapping("api/orders")
 @Log4j2
 public class OrdersController {
-	
-	
 	@Autowired
 	//OrdersRepository ordersRepository;
 	 OrderService orderService;
 	
 	
 	@GetMapping
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ResponseEntity<List<Orders>>  getAllOrders() {
 		log.info("Trayendo ordenes");
 		List<Orders> orders = (List<Orders>) orderService.getAllOrders();
@@ -40,7 +40,7 @@ public class OrdersController {
 	
 	@GetMapping("{id}") 
 	
-		public ResponseEntity<Orders> getOrderById(@PathVariable int id){
+	public ResponseEntity<Orders> getOrderById(@PathVariable int id){
 		log.info("Trayendo orden");
 		return new ResponseEntity<>(orderService.getOrderById(id), HttpStatus.OK);
 		

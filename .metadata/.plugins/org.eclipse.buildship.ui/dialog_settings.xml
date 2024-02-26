@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.import">
+		<item key="project_location" value="C:\Users\darks\OneDrive\Documentos\bb\BubbleBearBack"/>
+		<item key="apply_working_sets" value="true"/>
+		<item key="gradle_distribution" value="GRADLE_DISTRIBUTION(WRAPPER)"/>
+		<list key="working_sets">
+		</list>
+	</section>
+</section>

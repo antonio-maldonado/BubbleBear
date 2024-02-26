@@ -1,5 +1,8 @@
 package com.bubblebear.backendProject.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 //import lombok.AllArgsConstructor;
@@ -24,18 +27,25 @@ public class OrdersHasProducts {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "quantity", nullable = false)
+    @Column(name = "quantity", nullable = true,columnDefinition="INT default 1")
     private int quantity;
 
-    @Column(name = "price_product", nullable = false)
+    @Column(name = "price_product", nullable = true,columnDefinition="INT default 1")
     private int priceProduct;
 
-    @Column(name = "fk_product_id", nullable = false)
-    private int product;
+	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+	@JoinColumn(name="product_id")
+	//@JsonIgnoreProperties("orders_has_products")
+	private Product product;
     
-    @Column(name = "fk_order_id", nullable = false)
-    private int order;
-    
+	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+	@JoinColumn(name="order_id")
+	//@JsonIgnoreProperties("orders_has_products")
+	private Orders order;
+//    
+//    @Column(name = "fk_order_id", nullable = false)
+//    private int order;
+//    
 //    @ManyToOne
 //	@JoinColumn(name="fk_order_id")
 //	@JsonIgnoreProperties("orders_has_products")
